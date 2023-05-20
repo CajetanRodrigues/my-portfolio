@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, useTheme, Grid, Box, Paper } from "@mui/material";
+import { Container, Typography, useTheme, Grid, Paper } from "@mui/material";
 import "./LandingPage.css";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -62,7 +62,11 @@ const CardItem = ({ card, index }) => {
       className="card"
     >
       <Grid container sx={{ width: "100%" }}>
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} md={2}
+        sx={{
+            backgroundColor: "#011e3c",
+            borderRight: "1px solid #66b2ff",
+          }}>
           <CardMedia
             component="img"
             sx={{

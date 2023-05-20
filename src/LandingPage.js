@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import { Container, Typography, useTheme, Paper } from '@mui/material';
+import { Container, Typography, useTheme } from '@mui/material';
 import './LandingPage.css';
 import dp from './dp.png';
 import { useInView } from "react-intersection-observer";
