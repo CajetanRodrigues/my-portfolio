@@ -15,7 +15,7 @@ function App() {
           color: "#ffffff",
           distance: 150,
           enable: true,
-          opacity: 0.4,
+          opacity: 0.3,
           width: 1,
       },
       collisions: {
