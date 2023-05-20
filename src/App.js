@@ -15,7 +15,7 @@ function App() {
           color: "#ffffff",
           distance: 150,
           enable: true,
-          opacity: 0.3,
+          opacity: 0.5,
           width: 1,
       },
       collisions: {
@@ -39,7 +39,7 @@ function App() {
           value: 80,
       },
       opacity: {
-          value: 0.0,
+          value: 0.4,
       },
       shape: {
           type: "circle",
