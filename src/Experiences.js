@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, useTheme, Grid } from "@mui/material";
+import { Container, Typography, useTheme, Grid, Box, Paper } from "@mui/material";
 import "./LandingPage.css";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,13 +9,29 @@ import { useInView } from "react-intersection-observer";
 
 const Experiences = () => {
   const theme = useTheme();
-
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.1, // Adjust the threshold as per your preference
+  });
   return (
     <Container
       sx={{
         padding: theme.breakpoints.between("xs", "sm") ? "20px" : "150px",
       }}
     >
+            <Paper ref={ref} elevation={3} sx={{ backgroundColor: "#011e3c", 
+            opacity: inView ? 1 : 0,
+            transform: `translateX(${inView ? 0 : "-50px"})`,
+            transition: "opacity 0.8s ease, transform 0.8s ease"}}
+            >
+    <Typography variant="h3" className='lightblue-text' 
+                    sx={{
+                        padding: '10px',
+                        textAlign: 'center'
+                    }}>
+                        Experiences
+                    </Typography>
+    </Paper>
       {experiences.map((card, index) => (
         <CardItem key={index} card={card} index={index} />
       ))}
@@ -35,7 +51,7 @@ const CardItem = ({ card, index }) => {
       sx={{
         display: "flex",
         backgroundColor: "#011e3c",
-        margin: "30px",
+        margin: "20px 0px",
         borderColor: "#66b2ff",
         borderWidth: "1px",
         borderStyle: "solid",
