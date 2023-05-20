@@ -1,0 +1,26 @@
+.white-text {
+  color: #ffffff;
+  text-align: left;
+}
+
+.lightblue-text {
+  color: #66b2ff;
+  text-align: left;
+}
+
+.image-container {
+  text-align: center; /* Default alignment for mobile screens */
+
+  @media (min-width: 600px) {
+    text-align: right; /* Align right on screens larger than or equal to 600px */
+  }
+}
+
+.image {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+  border-color: #60BAFF;
+  border-width: 10px;
+  border-style: dashed;
+}
