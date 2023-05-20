@@ -20,7 +20,11 @@
   width: 100%;
   max-width: 300px;
   margin: 10px;
-  border-color: #60BAFF;
-  border-width: 10px;
-  border-style: dashed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }

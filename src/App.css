@@ -1,5 +1,5 @@
 .App {
-  background-color: #011e3c;
-  height: 100vh; /* Sets the height to 100% of the viewport height */
+  background-color: #0a1929;
+  height: 100%; /* Sets the height to 100% of the viewport height */
   width: 100%; /* Sets the width to 100% of the parent container */
 }
