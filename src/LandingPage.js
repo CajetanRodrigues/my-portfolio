@@ -1,8 +1,8 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import { Container, Typography, useTheme } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import './LandingPage.css';
-import dp from './dp.png';
+import dp from './assets/dp.png';
 import { useInView } from "react-intersection-observer";
 
 
@@ -13,10 +13,7 @@ const LandingPage = () => {
       });
     const theme = useTheme();
     return (
-        <Container
-            sx={{
-                padding: theme.breakpoints.between('xs', 'sm') ? '20px' : '150px',
-            }}>
+        <Box>
             <Grid
                 container
                 direction="row"
@@ -63,7 +60,7 @@ const LandingPage = () => {
                     />
                 </Grid>
             </Grid>
-        </Container>
+        </Box>
     );
 };
 

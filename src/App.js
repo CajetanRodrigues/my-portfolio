@@ -1,9 +1,12 @@
 import React, { useCallback } from "react";
+import { Container, useTheme } from "@mui/material";
 import "./App.css";
 import LandingPage from "./LandingPage";
 import Experiences from "./Experiences";
 import { loadFull } from "tsparticles";
 import Particles from "react-tsparticles";
+import ResumeViewer from "./ResumeViewer";
+import Skills from "./Skills";
 
 function App() {
   const particleOptions = {
@@ -13,9 +16,9 @@ function App() {
       },
       links: {
           color: "#ffffff",
-          distance: 150,
+          distance: 100,
           enable: true,
-          opacity: 0.5,
+          opacity: 0.4,
           width: 1,
       },
       collisions: {
@@ -27,7 +30,7 @@ function App() {
           outModes: {
               default: "bounce",
           },
-          random: true,
+          random: false,
           speed: 2,
           straight: false,
       },
@@ -36,16 +39,16 @@ function App() {
               enable: true,
               area: 800,
           },
-          value: 80,
+          value: 150,
       },
       opacity: {
-          value: 0.4,
+          value: 0.6,
       },
       shape: {
-          type: "circle",
+          type: "triangle",
       },
       size: {
-          value: { min: 1, max: 5 },
+          value: { min: 3, max: 5 },
       },
   },
   };
@@ -58,7 +61,7 @@ function App() {
       // Particles have been loaded and the container is ready
     });
   }, []);
-
+  const theme = useTheme();
   return (
     <div className="App">
       <Particles
@@ -66,8 +69,16 @@ function App() {
         options={particleOptions}
         init={particlesInit}
       />
+          <Container
+      sx={{
+        padding: theme.breakpoints.between("xs", "sm") ? "20px" : "150px",
+      }}
+    >
       <LandingPage />
       <Experiences />
+      <Skills/>
+      <ResumeViewer/>
+      </Container>
     </div>
   );
 }

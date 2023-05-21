@@ -1,41 +1,22 @@
 import React from "react";
-import { Container, Typography, useTheme, Grid, Paper } from "@mui/material";
+import { Typography, useTheme, Grid, Box } from "@mui/material";
 import "./LandingPage.css";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { experiences } from "./constants.js";
 import { useInView } from "react-intersection-observer";
-
+import SectionHeading from "./SectionHeading";
 const Experiences = () => {
   const theme = useTheme();
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1, // Adjust the threshold as per your preference
-  });
   return (
-    <Container
-      sx={{
-        padding: theme.breakpoints.between("xs", "sm") ? "20px" : "150px",
-      }}
-    >
-            <Paper ref={ref} elevation={3} sx={{ backgroundColor: "#011e3c", 
-            opacity: inView ? 1 : 0,
-            transform: `translateX(${inView ? 0 : "-50px"})`,
-            transition: "opacity 0.8s ease, transform 0.8s ease"}}
-            >
-    <Typography variant="h3" className='lightblue-text' 
-                    sx={{
-                        padding: '10px',
-                        textAlign: 'center'
-                    }}>
-                        Experiences
-                    </Typography>
-    </Paper>
+    <Box>
+        <SectionHeading sectionHeading="Experiences"/>
+            
       {experiences.map((card, index) => (
         <CardItem key={index} card={card} index={index} />
       ))}
-    </Container>
+    </Box>
   );
 };
 
@@ -54,6 +35,7 @@ const CardItem = ({ card, index }) => {
         margin: "20px 0px",
         borderColor: "#66b2ff",
         borderWidth: "1px",
+        borderRadius: '20px',
         borderStyle: "solid",
         opacity: inView ? 1 : 0,
         transform: `translateX(${inView ? 0 : "-50px"})`,

@@ -8,12 +8,17 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.16",
+    "@mui/lab": "^5.0.0-alpha.130",
     "@mui/material": "^5.13.1",
+    "@mui/styles": "^5.13.1",
+    "pdfjs-dist": "^3.6.172",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intersection-observer": "^9.4.3",
+    "react-pdf": "^6.2.2",
     "react-scripts": "5.0.1",
     "react-tsparticles": "^2.9.3",
+    "tinycolor2": "^1.6.0",
     "tsparticles": "^2.9.3"
   },
   "scripts": {
