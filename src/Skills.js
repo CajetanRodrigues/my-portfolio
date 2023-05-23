@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/system';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableRow, Paper } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import { useInView } from "react-intersection-observer";
 
@@ -76,7 +76,7 @@ const ChipStyled = styled(Chip)(({ theme }) => ({
   marginBottom: theme.spacing(0.5),
   '&:last-child': {
     marginBottom: 0,
-  },
+  }
 }));
 
 const Skills = () => {

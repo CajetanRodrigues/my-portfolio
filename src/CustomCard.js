@@ -1,26 +1,24 @@
 import React from "react";
-import { Typography, useTheme, Grid, Box } from "@mui/material";
+import { Typography, Grid, Box, Button } from "@mui/material";
 import "./LandingPage.css";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { experiences } from "./constants.js";
 import { useInView } from "react-intersection-observer";
 import SectionHeading from "./SectionHeading";
-const Experiences = () => {
-  const theme = useTheme();
+const CustomCard = ({customListName, customList}) => {
   return (
     <Box>
-        <SectionHeading sectionHeading="Experiences"/>
+        <SectionHeading sectionHeading={customListName}/>
             
-      {experiences.map((card, index) => (
-        <CardItem key={index} card={card} index={index} />
+      {customList.map((card, index) => (
+        <CustomCardItem key={index} card={card} index={index} />
       ))}
     </Box>
   );
 };
 
-const CardItem = ({ card, index }) => {
+const CustomCardItem = ({ card, index }) => {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.6, // Adjust the threshold as per your preference
@@ -50,13 +48,15 @@ const CardItem = ({ card, index }) => {
             borderRight: "1px solid #66b2ff",
           }}>
           <CardMedia
-            component="img"
-            sx={{
-              width: "100%",
-            }}
-            image={card.image} // Use require with .default
-            alt="Company Logo"
-          />
+    component="img"
+    sx={{
+      width: "100%",
+      height: "100%",
+      objectFit: "fit", // Add objectFit property with "contain" value
+    }}
+    image={card.image}
+    alt="Company Logo"
+  />
         </Grid>
         <Grid item xs={12} md={10}>
           <CardContent sx={{ flex: "1 0 auto" }}>
@@ -65,7 +65,7 @@ const CardItem = ({ card, index }) => {
               variant="h5"
               sx={{ fontWeight: "bold", color: "white" }}
             >
-              {card.role}
+              {card.title}
             </Typography>
             <Typography
               variant="subtitle1"
@@ -73,7 +73,7 @@ const CardItem = ({ card, index }) => {
               component="div"
               sx={{ fontWeight: "bold", color: "#66b2ff" }}
             >
-              {card.location}
+              {card.subtitle}
             </Typography>
             <Typography
               variant="body2"
@@ -83,6 +83,11 @@ const CardItem = ({ card, index }) => {
             >
               {card.description}
             </Typography>
+            {card.link && (
+              <a href={card.link} target="_blank" rel="noopener noreferrer">
+              <Button variant="contained" sx={{marginTop: '10px'}}>View Project</Button>
+            </a>
+            )}
           </CardContent>
         </Grid>
       </Grid>
@@ -90,4 +95,4 @@ const CardItem = ({ card, index }) => {
   );
 };
 
-export default Experiences;
+export default CustomCard;

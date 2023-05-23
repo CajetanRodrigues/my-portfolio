@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import './LandingPage.css';
 import dp from './assets/dp.png';
 import { useInView } from "react-intersection-observer";
@@ -11,7 +11,6 @@ const LandingPage = () => {
         triggerOnce: false,
         threshold: 0.1, // Adjust the threshold as per your preference
       });
-    const theme = useTheme();
     return (
         <Box>
             <Grid

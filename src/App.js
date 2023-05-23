@@ -2,12 +2,12 @@ import React, { useCallback } from "react";
 import { Container, useTheme } from "@mui/material";
 import "./App.css";
 import LandingPage from "./LandingPage";
-import Experiences from "./Experiences";
 import { loadFull } from "tsparticles";
 import Particles from "react-tsparticles";
-import ResumeViewer from "./ResumeViewer";
 import Skills from "./Skills";
-
+import CustomCard from './CustomCard';
+import { Education, Experiences, Projects } from "./constants";
+import SocialMedia from "./SocialMedia";
 function App() {
   const particleOptions = {
     particles: {
@@ -75,9 +75,12 @@ function App() {
       }}
     >
       <LandingPage />
-      <Experiences />
+      <SocialMedia />
+      <CustomCard customList={Experiences} customListName="Experiences" />
       <Skills/>
-      <ResumeViewer/>
+      {/* <ResumeViewer/> */}
+      <CustomCard customList={Education} customListName="Education" />
+      <CustomCard customList={Projects} customListName="Education" />
       </Container>
     </div>
   );

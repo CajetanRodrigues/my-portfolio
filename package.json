@@ -9,7 +9,7 @@
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.16",
     "@mui/lab": "^5.0.0-alpha.130",
-    "@mui/material": "^5.13.1",
+    "@mui/material": "^5.13.2",
     "@mui/styles": "^5.13.1",
     "pdfjs-dist": "^3.6.172",
     "react": "^17.0.2",
