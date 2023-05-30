@@ -69,7 +69,7 @@ const Education = [
   },
   {
     image: require('./assets/crce.png'),
-    title: 'Fr. Conceicao Rodrigues College of Engineering (Mumbai University)',
+    title: 'Mumbai University',
     subtitle: 'Mumbai, India',
     description: 'Operating System, Computer Networks, Big Data & Analytics, Data Warehousing & Mining, Cryptography & System Security, Distributed Computing, Natural Language Processing, Cloud Computing, Computer Organisation & Architecture.'
   },
@@ -78,14 +78,14 @@ const Education = [
 const Projects = [
   {
     image: require('./assets/cvrp.png'),
-    title: 'Capacitated Vehicle Routing Problem',
+    title: 'Chained Meta-heuristics',
     subtitle: 'Masters Thesis Project',
     description: 'In this research project, I aim to develop and implement a powerful, synergistic approach that leverages the strengths of multiple meta-heuristic algorithms by chaining them together and aims to achieve close to optimal results for large-scale CVRP instances in a shorter period of time, which will be evaluated against the well-established CVRPLIB benchmark datasets.',
     link: 'http://dx.doi.org/10.13140/RG.2.2.14417.30565'
   },
   {
     image: require('./assets/dbsp.png'),
-    title: 'Performance Comparison of Graph Database and Relational Database',
+    title: 'Neo4j vs SQL',
     subtitle: 'Masters Project',
     description: 'This study aims to evaluate the performance of Neo4j and MySQL in terms of data query execution time by examining representative queries from four categories: selection/search, recursion, aggregation, and pattern matching. Real-world data from Career Village was used for the experiment.',
     link: 'http://dx.doi.org/10.13140/RG.2.2.27380.32641'

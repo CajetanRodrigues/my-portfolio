@@ -1,56 +1,59 @@
 import React, { useCallback } from "react";
-import { Container, useTheme } from "@mui/material";
+import { Container, useTheme, Box } from "@mui/material";
 import "./App.css";
 import LandingPage from "./LandingPage";
 import { loadFull } from "tsparticles";
 import Particles from "react-tsparticles";
 import Skills from "./Skills";
-import CustomCard from './CustomCard';
+import CustomCard from "./CustomCard";
 import { Education, Experiences, Projects } from "./constants";
-import SocialMedia from "./SocialMedia";
+import AppMenuBar from "./AppMenuBar";
+import { Element } from "react-scroll";
+import SectionHeading from "./SectionHeading";
+
 function App() {
   const particleOptions = {
     particles: {
       color: {
-          value: "#ffffff",
+        value: "#ffffff",
       },
       links: {
-          color: "#ffffff",
-          distance: 100,
-          enable: true,
-          opacity: 0.4,
-          width: 1,
+        color: "#ffffff",
+        distance: 100,
+        enable: true,
+        opacity: 0.4,
+        width: 1,
       },
       collisions: {
-          enable: true,
+        enable: true,
       },
       move: {
-          directions: "none",
-          enable: true,
-          outModes: {
-              default: "bounce",
-          },
-          random: false,
-          speed: 2,
-          straight: false,
+        directions: "none",
+        enable: true,
+        outModes: {
+          default: "bounce",
+        },
+        random: false,
+        speed: 2,
+        straight: false,
       },
       number: {
-          density: {
-              enable: true,
-              area: 800,
-          },
-          value: 150,
+        density: {
+          enable: true,
+          area: 800,
+        },
+        value: 150,
       },
       opacity: {
-          value: 0.6,
+        value: 0.6,
       },
       shape: {
-          type: "triangle",
+        type: "triangle",
       },
       size: {
-          value: { min: 3, max: 5 },
+        value: { min: 3, max: 5 },
       },
-  },
+    },
   };
 
   const particlesInit = useCallback((particlesInstance) => {
@@ -69,18 +72,36 @@ function App() {
         options={particleOptions}
         init={particlesInit}
       />
-          <Container
-      sx={{
-        padding: theme.breakpoints.between("xs", "sm") ? "20px" : "150px",
-      }}
-    >
-      <LandingPage />
-      <SocialMedia />
-      <CustomCard customList={Experiences} customListName="Experiences" />
-      <Skills/>
-      {/* <ResumeViewer/> */}
-      <CustomCard customList={Education} customListName="Education" />
-      <CustomCard customList={Projects} customListName="Education" />
+      
+      <AppMenuBar />
+
+      <Container
+        sx={{
+          paddingTop: "64px", // Add padding to adjust for the fixed AppBar
+          padding: theme.breakpoints.between("xs", "sm") ? "20px" : "150px",
+        }}
+      >
+        <Element name="landing-page" className="element">
+          <LandingPage />
+        </Element>
+        <Element name="experiences" className="element">
+          <CustomCard customList={Experiences} customListName="Experiences" />
+        </Element>
+        <Element name="skills" className="element">
+          <Box sx={{marginBottom: '20px'}}>
+          <SectionHeading sectionHeading="Skills" />
+          </Box>
+          <Skills />
+        </Element>
+        <Element name="education" className="element">
+          <CustomCard customList={Education} customListName="Education" />
+        </Element>
+        <Element name="projects" className="element">
+          <CustomCard
+            customList={Projects}
+            customListName="Projects"
+          />
+        </Element>
       </Container>
     </div>
   );
