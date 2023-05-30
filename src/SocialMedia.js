@@ -12,7 +12,7 @@ const SocialMedia = () => {
   });
   const isSmall = window.innerWidth <= 600
   return (
-    <Box>
+    <Box sx={{margin: '10px'}}>
       <Grid
         container
         direction="row"

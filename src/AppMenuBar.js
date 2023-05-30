@@ -9,7 +9,8 @@ import {
   List,
   ListItem,
   useMediaQuery,
-  useTheme
+  useTheme,
+  Box
 } from "@mui/material";
 import { Link } from "react-scroll";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -89,7 +90,7 @@ const AppMenuBar = () => {
                   marginRight: "auto"
                 }}
               >
-                Portfolio
+                PORTFOLIO
               </Link>
               <IconButton
               edge="start"
@@ -117,7 +118,7 @@ const AppMenuBar = () => {
                   marginRight: "auto"
                 }}
               >
-                Portfolio
+                PORTFOLIO
               </Link>
               <Link
                 activeClass="active"
@@ -133,7 +134,7 @@ const AppMenuBar = () => {
                   marginRight: "16px"
                 }}
               >
-                Experiences
+                EXPERIENCES
               </Link>
               <Link
                 activeClass="active"
@@ -149,7 +150,7 @@ const AppMenuBar = () => {
                   marginRight: "16px"
                 }}
               >
-                Skills
+                SKILLS
               </Link>
               <Link
                 activeClass="active"
@@ -165,7 +166,7 @@ const AppMenuBar = () => {
                   marginRight: "16px"
                 }}
               >
-                Education
+                EDUCATION
               </Link>
               <Link
                 activeClass="active"
@@ -181,7 +182,7 @@ const AppMenuBar = () => {
                   marginRight: "16px"
                 }}
               >
-                Projects
+                PROJECTS
               </Link>
             </>
           )}
@@ -190,8 +191,28 @@ const AppMenuBar = () => {
       {isMobile && (
         <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}>
           <List>
-            <ListItem button onClick={toggleDrawer(false)}>
+          <ListItem>
               <Link
+                onClick={toggleDrawer(false)}
+                activeClass="active"
+                to="landing-page"
+                spy={true}
+                smooth={true}
+                offset={-64}
+                duration={500}
+                style={{
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  color: "black",
+                  marginRight: "16px"
+                }}
+              >
+                PORTFOLIO
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                onClick={toggleDrawer(false)}
                 activeClass="active"
                 to="experiences"
                 spy={true}
@@ -205,11 +226,12 @@ const AppMenuBar = () => {
                   marginRight: "16px"
                 }}
               >
-                Experiences
+                EXPERIENCES
               </Link>
             </ListItem>
-            <ListItem button onClick={toggleDrawer(false)}>
+            <ListItem>
               <Link
+                onClick={toggleDrawer(false)}
                 activeClass="active"
                 to="skills"
                 spy={true}
@@ -223,11 +245,12 @@ const AppMenuBar = () => {
                   marginRight: "16px"
                 }}
               >
-                Skills
+                SKILLS
               </Link>
             </ListItem>
-            <ListItem button onClick={toggleDrawer(false)}>
+            <ListItem>
               <Link
+                onClick={toggleDrawer(false)}
                 activeClass="active"
                 to="education"
                 spy={true}
@@ -241,11 +264,12 @@ const AppMenuBar = () => {
                   marginRight: "16px"
                 }}
               >
-                Education
+                EDUCATION
               </Link>
             </ListItem>
-            <ListItem button onClick={toggleDrawer(false)}>
+            <ListItem>
               <Link
+                onClick={toggleDrawer(false)}
                 activeClass="active"
                 to="projects"
                 spy={true}
@@ -259,7 +283,7 @@ const AppMenuBar = () => {
                   marginRight: "16px"
                 }}
               >
-                Projects
+                PROJECTS
               </Link>
             </ListItem>
           </List>

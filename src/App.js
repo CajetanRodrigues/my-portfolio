@@ -10,6 +10,7 @@ import { Education, Experiences, Projects } from "./constants";
 import AppMenuBar from "./AppMenuBar";
 import { Element } from "react-scroll";
 import SectionHeading from "./SectionHeading";
+import SocialMedia from './SocialMedia'
 
 function App() {
   const particleOptions = {
@@ -84,6 +85,7 @@ function App() {
         <Element name="landing-page" className="element">
           <LandingPage />
         </Element>
+        <SocialMedia></SocialMedia>
         <Element name="experiences" className="element">
           <CustomCard customList={Experiences} customListName="Experiences" />
         </Element>
